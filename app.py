@@ -49,7 +49,6 @@ default_handler = SlackRequestHandler(app)
 
 @flask_app.route('/slack/events', methods=['POST'])
 def events():
-	print('RECEIVED SLACK EVENT')
 	return default_handler.handle(request)
 
 # Create SSC Payload
@@ -231,7 +230,6 @@ def interactions(ack, client, body):
 def einstein(ack, command, client, body):
 	ack()
 	global user_id, account, dataset, uid_campaign, promo_campaign, promo_datafield, uid_datafield
-	print('EINSTEIN STARTING')
 	
 	# Store Slack request
 	data = body
@@ -267,14 +265,6 @@ def einstein(ack, command, client, body):
 	else:
 		client.chat_postMessage(channel=channel_id, text=':exclamation: User *' + user_input + '* could not be found. Please check the ID and try again.')
 		return
-
-	# **DEBUG**
-	# print('Print out User Data')
-	# print(json_user_data)
-
-	# **DEBUG**
-	# print('Print out SSC Data')
-	# print(json_ssc_data)
 
 	# Store user attributes
 	segments = "N/A" if json_user_data['segments'] is None else ', '.join(map(str, json_user_data['segments'])) # Convert list to string
