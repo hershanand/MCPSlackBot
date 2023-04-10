@@ -15,8 +15,8 @@ This bot was created in order to pull in a user's attributes, segment membership
 
 ## ⚡️ 1. Create Server-Side Template & Campaign, Generate API Keys
 1. You’ll need to create 2 server-side templates:
-	1. First template should return the list of promotions (reference our Einstein Decisions template).
-	2. Second template should return the user’s attributes (reference the following GitHub repo)
+	1. First template should return the list of promotions (reference our [Einstein Decisions template](https://developer.salesforce.com/docs/marketing/personalization/guide/sales-service-cloud-connector-einstein-decisions.html)).
+	2. Second template should return the user’s attributes (reference the following [GitHub repo](https://github.com/aaronrileysalesforce/ServerSideTemplates/blob/main/RetrieveAttributes))
 2. Next you’ll create a server-side campaign, one for each of the templates. Attach each template to their respected campaign, apply any additional rulesets, and publish.
 3. Navigate to **Security → API Tokens** and select the **Generate Token button** to create the API Keys (we will use this later in Heroku)
 
