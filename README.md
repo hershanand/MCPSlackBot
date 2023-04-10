@@ -1,7 +1,7 @@
 # Marketing Cloud Personalization - Slack Bot
 
 <p align="center">
-	<img src="https://github.com/hershanand/is-pop-slack/blob/main/images/MCPSlackBot.png? alt=raw=true" alt="MCP Slack Bot" width=50% height=50%>
+	<img src="https://image.s4.sfmc-content.com/lib/fe2b1172766404757c1075/m/1/dcaf653f-5489-405c-83fc-dad88c32bb12.png" alt="MCP Slack Bot" width=50% height=50%>
 </p>
 
 ## 📖 Summary
@@ -23,7 +23,7 @@ This bot was created in order to pull in a user's attributes, segment membership
 ## 🧬 2. Configure MCP Slack Bot
 1. Clone this GitHub repo and open the **config.yaml** file.
     1. Edit **lines 5-10** with your MCP instance information. The **datafield** attributes were set in your server-side template code.
-    2. <img src="https://github.com/hershanand/is-pop-slack/blob/main/images/yaml_config_example.jpg?raw=true" alt="YAML Config" width=65% height=65%>
+    2. <img src="https://image.s4.sfmc-content.com/lib/fe2b1172766404757c1075/m/1/b855e9cc-5593-43b5-a566-d602cb562fe4.jpg" alt="YAML Config" width=65% height=65%>
 2. Create a new app within Heroku and deploy the cloned repo with your modified YAML file.
 3. Within the app, navigate to **Settings** and select **Reveal Config Vars button**. Add the following API values you obtained from MCP in Step 1.3 and label them the following:
     1. API_KEY
@@ -72,9 +72,9 @@ settings:
 ## 🚀 4. Deploy MCP Slack Bot
 
 1. Within Slack, create a new channel and give it a name.
-    1. <img src="https://github.com/hershanand/is-pop-slack/blob/main/images/Slack-create_channel.png?raw=true" alt="Slack - Create Channel" width=40% height=40%>
+    1. <img src="https://image.s4.sfmc-content.com/lib/fe2b1172766404757c1075/m/1/c182eaad-29c1-4e6c-9a1a-d03bd0ccfae1.png" alt="Slack - Create Channel" width=40% height=40%>
 2. Add the bot by inviting it into the channel using the command **/invite** and selecting **Add apps to this channel**
-    1. <img src="https://github.com/hershanand/is-pop-slack/blob/main/images/Slack-invite.png?raw=true" alt="Slack - Invite Bot" width=35% height=35%>
+    1. <img src="https://image.s4.sfmc-content.com/lib/fe2b1172766404757c1075/m/1/bea75df8-b703-4779-8ec5-0ff30d60de2d.png" alt="Slack - Invite Bot" width=35% height=35%>
 3. Click **Add** button for the **MC Personalization** app
 4. Run the bot by entering the **/einstein** command followed by the user’s e-mail to retrieve back their user attributes and NBO/NBA.  
 5. Congrats!! The bot has been successfully deployed and set up within your workspace!! 🥳
