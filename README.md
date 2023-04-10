@@ -11,18 +11,21 @@ This bot was created in order to pull in a user's attributes, segment membership
 * Heroku
 * Slack
 * Marketing Cloud Personalization - Premium Edition
-* MCP Promotion Library Setup
+* MCP Promotion Library Setup (minimum of **name, image, and description** should be present)
 
 ## ⚡️ 1. Create Server-Side Template & Campaign, Generate API Keys
 1. You’ll need to create 2 server-side templates:
 	1. First template should return the list of promotions (reference our [Einstein Decisions template](https://developer.salesforce.com/docs/marketing/personalization/guide/sales-service-cloud-connector-einstein-decisions.html)).
-	2. Second template should return the user’s attributes (reference the following [GitHub repo](https://github.com/aaronrileysalesforce/ServerSideTemplates/blob/main/RetrieveAttributes))
-2. Next you’ll create a server-side campaign, one for each of the templates. Attach each template to their respected campaign, apply any additional rulesets, and publish.
-3. Navigate to **Security → API Tokens** and select the **Generate Token button** to create the API Keys (we will use this later in Heroku)
+	2. Second template should return the user’s attributes (reference the following [GitHub repo](https://github.com/aaronrileysalesforce/ServerSideTemplates/blob/main/RetrieveAttributes)).
+2. Next you’ll create a server-side campaign, one for each of the templates. Attach each template to their respected campaign.
+    1. For the promotions campaign, set the asset content zone and a value for the datafield.
+    2. For the user attribute campaign, set the value to retrieve as **profileId**.
+    3. Save and publish both campaigns.
+3. Navigate to **Security → API Tokens** and select the **Generate Token button** to create the API Keys (we will use this later in Heroku).
 
 ## 🧬 2. Configure MCP Slack Bot
 1. Clone this GitHub repo and open the **config.yaml** file.
-    1. Edit **lines 5-10** with your MCP instance information. The **datafield** attributes were set in your server-side template code.
+    1. Edit **lines 5-10** with your MCP instance information: account & dataset name, datafield values, server-side campaign names. The **datafield** attributes were set in your server-side template code. Reference the config file below as an example:
     2. <img src="https://image.s4.sfmc-content.com/lib/fe2b1172766404757c1075/m/1/b855e9cc-5593-43b5-a566-d602cb562fe4.jpg" alt="YAML Config" width=65% height=65%>
 2. Create a new app within Heroku and deploy the cloned repo with your modified YAML file.
 3. Within the app, navigate to **Settings** and select **Reveal Config Vars button**. Add the following API values you obtained from MCP in Step 1.3 and label them the following:
