@@ -62,7 +62,7 @@ def create_ssc_payload(user_input):
 		},
 		"source": {
 			"channel": "Server",
-			"application": "Slack"
+			"application": "Slack Bot"
 		},
 		"debug": {
 			"explanations": "true",
@@ -88,7 +88,8 @@ def create_campaignStats_payload(campaign_name, experience_id, user_id):
 			"control": "false"
 		}],
 		"source": {
-			"channel":"Slack"
+			"channel": "Server",
+			"application": "Slack Bot"
 		}
 	}
 	return campaignStats
