@@ -63,10 +63,6 @@ def create_ssc_payload(user_input):
 		"source": {
 			"channel": "Server",
 			"application": "Slack Bot"
-		},
-		"debug": {
-			"explanations": "true",
-			"testMessages": ""
 		}
 	}
 	return ssc
@@ -75,10 +71,6 @@ def create_ssc_payload(user_input):
 def create_campaignStats_payload(campaign_name, experience_id, user_id):
 	campaignStats = {
 		"action": campaign_name + " Conversion",
-		"debug": {
-			"explanations": "true",
-			"testMessages": ""
-		},
 		"user": {
 			"id": user_id
 		},
@@ -88,7 +80,7 @@ def create_campaignStats_payload(campaign_name, experience_id, user_id):
 			"control": "false"
 		}],
 		"source": {
-			"channel": "Server",
+			"channel": "server",
 			"application": "Slack Bot"
 		}
 	}
@@ -290,4 +282,4 @@ def einstein(ack, command, client, body):
 
 
 if __name__ == '__main__':
-	flask_app.run(debug=True)
+	flask_app.run()
