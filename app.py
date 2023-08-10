@@ -263,7 +263,7 @@ def einstein(ack, command, client, body):
 	segments = "N/A" if json_user_data['segments'] is None else ', '.join(map(str, json_user_data['segments'])) # Convert list to string
 	engagement = '{:.1%}'.format(json_user_data['engagementScore']) # Convert float to precentage
 	lastActivity = json_user_data['lastActivity']
-	name = "N/A" if json_user_data['displayName'] is None else json_user_data['displayName']
+	name = "N/A" if json_user_data['name'] is None else json_user_data['name']
 	email = "N/A" if json_user_data['emailAddress'] is None else json_user_data['emailAddress']
 	lastActivity /= 1000 # Convert milliseconds to seconds
 	ts = datetime.utcfromtimestamp(lastActivity).strftime('%m/%d/%Y %H:%M:%S') # Format unix timestamp
